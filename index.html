@@ -219,19 +219,19 @@
           <span itemprop="articleBody">
             
               <p><em>由于Node.js官网访问不稳定，有时出现无法访问或需要用到科学上网方法的情况。会导致npm模块编译失败的情况。</em></p>
-<p><strong>解决原理：  </strong><br>node-gyp 在 <code>rebuild</code> 组件时需要用到node.js源代码相关头文件信息，若nodejs.org无法访问，则源码下载失败或超时，从而导致rebuild不能正常执行。<br>因此，可以通过手动下载源码或利用全局翻墙的方法解决此问题。本文以下载源码为例进行讲解。</p>
+<p><strong>解决原理：  </strong><br>node-gyp 在 <code>rebuild</code> 组件时需要用到node.js源代码相关头文件信息，若nodejs.org无法访问，则源码下载失败或超时，从而导致`rebuild不能正常执行。<br>因此，可以通过手动下载nodejs源码或全局翻墙解决此问题。本文以下载源码为例进行讲解。</p>
 <p><strong>解决方法：</strong>   </p>
 <ol>
 <li>检查node.js的版本号 <code>node -v</code>  </li>
 <li>登录<a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node.js官网</a> 下载对应版本的源代码</li>
 <li>解压到node-gyp的临时目录</li>
-<li>重命名文件夹，node-vx.xx -&gt; x.xx 只保留版本号</li>
+<li>重命名文件夹，node-vx.xx -&gt; x.xx (只保留版本号)</li>
 <li>标致为已安装状态</li>
 </ol>
-<h2 id="Windows">Windows</h2><p>node-gyp 临时目录（若无则手动创建）<br>    C:\Users\XXX.node-gyp </p>
+<h2 id="Windows">Windows</h2><p>node-gyp 临时目录（若无则手动创建）<br>    C:\Users\XXX\ .node-gyp </p>
 <h2 id="Mac_OS">Mac OS</h2><p>node-gyp 临时目录（若无则手动创建）<br>    /Users/xxx/.node-gyp </p>
-<p>进入解压后的文件夹，用sublime创建一个空文件，命名为<code>installVersion</code>;<br>输入文本<code>9</code>,回车换一行，保存。<br>这时再次执行，<code>npm install</code> 命令并可以正常编译组件。<br>若仍然无法安装，可通过查看详细日志找出问题根源。<br><code>npm install --loglevel verbose</code></p>
-<p>PS.<br>长城高墙越发高大，使用<code>npm</code>下载安装组件时时长遇到编译时间长、甚至超时报错等苦恼问题。大多因为github仓库、nodejs源码无法稳定访问所致。<br>上述之举实属无奈。</p>
+<p>进入解压后的文件夹，创建一个空文件，命名为<code>installVersion</code>。<br>输入文本<code>9</code>,回车换行，保存。<br>这时再次执行，<code>npm install</code> 命令并可以正常编译组件。<br>若仍然无法安装，可通过查看详细日志找出问题根源。<br><code>npm install --loglevel verbose</code></p>
+<p>PS.<br>长城高墙越发高大，使用<code>npm</code>下载安装组件时经常遇到编译无响应、超时报错等问题。<br>大多由于github仓库、nodejs源码访问超时所致。<br>上述之举实属无奈。</p>
 
             
           </span>
