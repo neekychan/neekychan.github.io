@@ -54,7 +54,8 @@
 解决原理：  node-gyp 在 rebuild 组件时需要用到node.js源代码相关头文件信息，若nodejs.org无法访问，则源码下载失败或超时，从而导致rebuild不能正常执行。因此，可以通过手动下载nodejs源码或全局翻墙解决此问题。本文以下载源码为例进行讲解。
 解决">
 <meta property="og:image" content="http://7sbmdw.com1.z0.glb.clouddn.com/node-gyp-win-path.jpg">
-<meta property="og:updated_time" content="2015-10-24T22:06:33.910Z">
+<meta property="og:image" content="http://7sbmdw.com1.z0.glb.clouddn.com/node-gyp-install.jpg">
+<meta property="og:updated_time" content="2015-10-24T22:11:40.076Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node-gyp 编译超时解决办法">
 <meta name="twitter:description" content="由于Node.js官网访问不稳定，有时出现无法访问或需要用到科学上网方法的情况。会导致npm模块编译失败的情况。
@@ -232,7 +233,9 @@
 <h2 id="Windows">Windows</h2><p>node-gyp 临时目录（若无则手动创建）<br>    C:\Users\XXX\ .node-gyp </p>
 <p><img src="http://7sbmdw.com1.z0.glb.clouddn.com/node-gyp-win-path.jpg" alt=""></p>
 <h2 id="Mac_OS">Mac OS</h2><p>node-gyp 临时目录（若无则手动创建）<br>    /Users/xxx/.node-gyp </p>
-<p>进入解压后的文件夹，创建一个空文件，命名为<code>installVersion</code>。<br>输入文本<code>9</code>,回车换行，保存。<br>这时再次执行，<code>npm install</code> 命令并可以正常编译组件。<br>若仍然无法安装，可通过查看详细日志找出问题根源。<br><code>npm install --loglevel verbose</code></p>
+<p>进入解压后的文件夹，创建一个空文件，命名为<code>installVersion</code>。<br>输入文本<code>9</code>,回车换行，保存。   </p>
+<p><img src="http://7sbmdw.com1.z0.glb.clouddn.com/node-gyp-install.jpg" alt=""></p>
+<p>这时再次执行，<code>npm install</code> 命令并可以正常编译组件。<br>若仍然无法安装，可通过查看详细日志找出问题根源。<br><code>npm install --loglevel verbose</code></p>
 <p>PS.<br>长城高墙越发高大，使用<code>npm</code>下载安装组件时经常遇到编译无响应、超时报错等问题。<br>大多由于github仓库、nodejs源码访问超时所致。<br>上述之举实属无奈。</p>
 </span>
       
